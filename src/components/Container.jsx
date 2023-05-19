@@ -32,6 +32,8 @@ function Container() {
       <ShoppingList
         setShoppingList={setShoppingList}
         shoppingListOfItems={shoppingListOfItems}
+        stock={StockListOfItems}
+        setStockListOfItems={setStockListOfItems}
       />
     </div>
   );

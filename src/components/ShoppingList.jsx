@@ -3,6 +3,8 @@ import ShoppingListItem from "./ShoppingListItem";
 function ShoppingList(props) {
   const shoppingListOfItems = props.shoppingListOfItems;
   const setShoppingList = props.setShoppingList;
+  const stock = props.StockListOfItems;
+  const setStockListOfItems = props.setStockListOfItems;
 
   return (
     <div className="mx-3">
@@ -23,6 +25,8 @@ function ShoppingList(props) {
                 quantity={element.quantity}
                 setShoppingList={setShoppingList}
                 shoppingListOfItems={shoppingListOfItems}
+                stock={stock}
+                setStockListOfItems={setStockListOfItems}
               />
             );
           })}

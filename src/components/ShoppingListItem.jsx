@@ -3,6 +3,8 @@ function ShoppingListItem(props) {
   const quantity = props.quantity;
   const shoppingListOfItems = props.shoppingListOfItems;
   const setShoppingList = props.setShoppingList;
+  const stock = props.stock;
+  const setStockListOfItems = props.setStockListOfItems;
 
   function removeItem(name) {
     setShoppingList((currentList) => {
@@ -18,6 +20,16 @@ function ShoppingListItem(props) {
         let newQuantity = currentListItem[0].quantity - 1;
         return [{ name: name, quantity: newQuantity }, ...notInCurrentList];
       }
+    });
+    setStockListOfItems((currentList) => {
+      const currentListItem = currentList.filter((item) => {
+        return item.name === name;
+      });
+      const notInCurrentList = currentList.filter((item) => {
+        return item.name !== name;
+      });
+      let newQuantity = currentListItem[0].quantity + 1;
+      return [{ name: name, quantity: newQuantity }, ...notInCurrentList];
     });
   }
 
