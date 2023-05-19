@@ -8,16 +8,24 @@ function ShoppingList(props) {
     <div className="mx-3">
       <h2>Selected Items</h2>
       <ul className="list-group">
-        {shoppingListOfItems.map((element) => {
-          return (
-            <ShoppingListItem
-              name={element.name}
-              quantity={element.quantity}
-              setShoppingList={setShoppingList}
-              shoppingListOfItems={shoppingListOfItems}
-            />
-          );
-        })}
+        {shoppingListOfItems
+          .sort((a, b) => {
+            let textA = a.name.toUpperCase();
+
+            let textB = b.name.toUpperCase();
+
+            return textA < textB ? -1 : textA > textB ? 1 : 0;
+          })
+          .map((element) => {
+            return (
+              <ShoppingListItem
+                name={element.name}
+                quantity={element.quantity}
+                setShoppingList={setShoppingList}
+                shoppingListOfItems={shoppingListOfItems}
+              />
+            );
+          })}
       </ul>
     </div>
   );
