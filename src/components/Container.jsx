@@ -22,7 +22,7 @@ function Container() {
 
   initialStockList;
   return (
-    <div className="d-flex flex-row justify-content-between mb-3">
+    <div className="container-fluid d-flex flex-row justify-content-between mb-3">
       <StockList
         stock={StockListOfItems}
         setShoppingList={setShoppingList}
