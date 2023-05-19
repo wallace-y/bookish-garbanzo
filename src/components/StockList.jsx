@@ -11,18 +11,26 @@ function StockList(props) {
     <div className="mx-3">
       <h2>Available Items</h2>
       <ul className="list-group ">
-        {listStock.map((element) => {
-          return (
-            <StockListItem
-              name={element.name}
-              quantity={element.quantity}
-              setShoppingList={setShoppingList}
-              shoppingListOfItems={shoppingListOfItems}
-              listStock={listStock}
-              setStockListOfItems={setStockListOfItems}
-            />
-          );
-        })}
+        {listStock
+          .sort((a, b) => {
+            let textA = a.name.toUpperCase();
+
+            let textB = b.name.toUpperCase();
+
+            return textA < textB ? -1 : textA > textB ? 1 : 0;
+          })
+          .map((element) => {
+            return (
+              <StockListItem
+                name={element.name}
+                quantity={element.quantity}
+                setShoppingList={setShoppingList}
+                shoppingListOfItems={shoppingListOfItems}
+                listStock={listStock}
+                setStockListOfItems={setStockListOfItems}
+              />
+            );
+          })}
       </ul>
     </div>
   );
