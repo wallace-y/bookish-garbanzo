@@ -8,7 +8,7 @@ function StockList(props) {
   const setStockListOfItems = props.setStockListOfItems;
 
   return (
-    <div className="mx-3">
+    <div className="mx-3 row">
       <h2>Available Items</h2>
       <ul className="list-group ">
         {listStock

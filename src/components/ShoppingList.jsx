@@ -7,7 +7,7 @@ function ShoppingList(props) {
   const setStockListOfItems = props.setStockListOfItems;
 
   return (
-    <div className="mx-3">
+    <div className="mx-3 row">
       <h2>Selected Items</h2>
       <ul className="list-group">
         {shoppingListOfItems
